@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Link Randomized on Click</title>
+</head>
+
+<body>
+    <div style="text-align:center">
+        <h2>You can add more than one link so you can cycle between them randomly. This example was used to cycle through whatsapp numbers.</h2>
+        <a onClick="pickTheLink()" style="cursor:pointer">
+            <img src="https://cdn.awsli.com.br/57/57293/arquivos/Apps-Whatsapp-C-icon.png" alt="WhatsApp Icon"/>
+        </a>
+    </div>
+
+    <script>
+        //add the links that you want to cycle through.
+        var urls = [
+            'https://api.whatsapp.com/send?phone=xsssxxxxx',
+            'https://api.whatsapp.com/send?phone=xxxxxx',
+            'https://api.whatsapp.com/send?phone=xxxxxxxxx'
+        ];
+
+        //
+        function pickTheLink() {
+            //function to run the random math with the urls
+            var url = urls[Math.floor(Math.random() * urls.length)];
+            //redirects to the website, opening a new window
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>
